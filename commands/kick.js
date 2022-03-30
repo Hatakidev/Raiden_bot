@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, Permissions } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
         }
         const kickembed = new MessageEmbed()
         .setColor('FF0000')
-        .setAuthor({name: 'Raiden', iconURL: 'https://media.discordapp.net/attachments/789775097136807976/957603365498536017/0fc8a7b349e7da5b4566bf6967b3a9d6.jpg'})
+        .setAuthor({name: `${interaction.member.username}`, iconURL: `${interaction.member.displayAvatarURL({dynamic: true})}`})
         .setThumbnail(`${member.displayAvatarURL({dynamic: true})}`)
         .setTitle(`${member.user.username} has been kicked`)
         .setTimestamp()
