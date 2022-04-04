@@ -12,22 +12,21 @@ module.exports = {
       if (!member) {
         return interaction.reply({content: 'You need to mention the member you want to ban him'});
       }
-
-      if (!interaction.member.permissions.has('BAN_MEMBERS')) {
+      else if (!interaction.member.permissions.has('BAN_MEMBERS')) {
         return interaction.reply({ content: `I can't ban this user.`});
-      }
-      const banembed = new MessageEmbed()
-          .setColor('FF0000')
-          .setAuthor({name: `${interaction.user.username}`, iconURL: `${interaction.user.displayAvatarURL({dynamic: true})}`})
-          .setThumbnail(`${member.displayAvatarURL({dynamic: true})}`)
-          .setTitle(`${member.username} has been banned`)
-          .setTimestamp()
-   
+      }else {
+          const banembed = new MessageEmbed()
+              .setColor('RED')
+              .setAuthor({name: `${interaction.user.username}`, iconURL: `${interaction.user.displayAvatarURL({dynamic: true})}`})
+              .setThumbnail(`${member.displayAvatarURL({dynamic: true})}`)
+              .setTitle(`${member.username} has been banned`)
+              .setTimestamp()
 
-      return interaction.guild.members
-        .ban(member)
-        .then(() => {
-          interaction.reply({embeds: [banembed]});
-        });
+          return interaction.guild.members
+              .ban(member)
+              .then(() => {
+                  interaction.reply({embeds: [banembed]});
+              });
+      }
     },
 };
