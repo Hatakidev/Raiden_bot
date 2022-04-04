@@ -9,11 +9,11 @@ module.exports = {
     async execute(interaction) {
         const member = interaction.options.getMember('user');
         const warnembed = new MessageEmbed()
-        .setColor('FF0000')
-        .setAuthor({name: `${interaction.member.username}`, iconURL: `${interaction.member.displayAvatarURL({dynamic: true})}`})
-        .setThumbnail(`${member.displayAvatarURL({dynamic: true})}`)
-        .setTitle(`${member.user.tag} has been warned`)
-        .setTimestamp()
+            .setColor('RED')
+            .setAuthor({name: `${interaction.user.username}`, iconURL: `${interaction.user.displayAvatarURL({dynamic: true})}`})
+            .setThumbnail(`${member.displayAvatarURL({dynamic: true})}`)
+            .setTitle(`${member.user.username} has been warned`)
+            .setTimestamp()
         return interaction.reply({ embeds: [warnembed] });
 	
     },
