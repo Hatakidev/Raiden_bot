@@ -17,11 +17,11 @@ module.exports = {
         return interaction.reply({ content: `I can't ban this user.`});
       }
       const banembed = new MessageEmbed()
-      .setColor('FF0000')
-      .setAuthor({name: 'Raiden', iconURL: 'https://media.discordapp.net/attachments/789775097136807976/957603365498536017/0fc8a7b349e7da5b4566bf6967b3a9d6.jpg'})
-      .setThumbnail(`${member.displayAvatarURL({dynamic: true})}`)
-      .setTitle(`${member.username} has been banned`)
-      .setTimestamp()
+          .setColor('FF0000')
+          .setAuthor({name: `${interaction.user.username}`, iconURL: `${interaction.user.displayAvatarURL({dynamic: true})}`})
+          .setThumbnail(`${member.displayAvatarURL({dynamic: true})}`)
+          .setTitle(`${member.username} has been banned`)
+          .setTimestamp()
    
 
       return interaction.guild.members
