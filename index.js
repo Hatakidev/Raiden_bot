@@ -18,6 +18,7 @@ for (const file of commandFiles) {
 
 client.once('ready', (client) => {
 	client.guilds.cache.get("the guild id");
+	client.user.setActivity('To the monkey that programs me', {type: 'WATCHING'})
 	console.log('Bot Ready!');
 });
 
