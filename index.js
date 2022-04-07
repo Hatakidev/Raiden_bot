@@ -17,8 +17,10 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', (client) => {
-	client.guilds.cache.get("the guild id");
-	client.user.setActivity('To the monkey that programs me', {type: 'WATCHING'})
+	client.user.setActivity('Watching to the monkey that programs me');
+	client.guilds.cache.forEach(guild => {
+		console.log(`${guild.name}`);
+	});
 	console.log('Bot Ready!');
 });
 
