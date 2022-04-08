@@ -11,7 +11,7 @@ module.exports = {
 		const userEmbed = new MessageEmbed()
 		.setTitle(`${user.username}'s avatar`)
 		.setColor('BLUE')
-		.setAuthor({name: `${interaction.member.username}`, iconURL: `${interaction.member.displayAvatarURL({dynamic: true})}`})
+		.setAuthor({name: `${interaction.user.username}`, iconURL: `${interaction.member.displayAvatarURL({dynamic: true})}`})
 		.setImage(`${user.displayAvatarURL({ dynamic: true })}`)
 		if (user) return interaction.reply({ embeds: [userEmbed]});
 	},

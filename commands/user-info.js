@@ -12,7 +12,7 @@ module.exports = {
         const userEmbed = new MessageEmbed()
         .setColor('YELLOW')
         .setTitle('User information')
-        .setAuthor({name: 'Raiden', iconURL: 'https://media.discordapp.net/attachments/789775097136807976/957603365498536017/0fc8a7b349e7da5b4566bf6967b3a9d6.jpg'})
+        .setAuthor({name: `${interaction.user.username}`, iconURL: `${interaction.member.displayAvatarURL({dynamic: true})}`})
         .addFields(
             {name: 'Name', value: `${user.username}`},
             {name: 'ID', value: `${user.id}`},
