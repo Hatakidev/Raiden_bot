@@ -10,7 +10,7 @@ module.exports = {
     async execute(interaction){
         const user = interaction.options.getUser('user');
         const userEmbed = new MessageEmbed()
-        .setColor('GREEN')
+        .setColor('YELLOW')
         .setTitle('User information')
         .setAuthor({name: 'Raiden', iconURL: 'https://media.discordapp.net/attachments/789775097136807976/957603365498536017/0fc8a7b349e7da5b4566bf6967b3a9d6.jpg'})
         .addFields(
