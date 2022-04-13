@@ -2,12 +2,8 @@ const fs = require('node:fs');
 const { Client, Collection, Intents } = require('discord.js');
 const { token, clientId } = require('./config.json');
 const { REST } = require('@discordjs/rest');
-
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-
 const rest = new REST({ version: '9' }).setToken(token);
-
-
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
